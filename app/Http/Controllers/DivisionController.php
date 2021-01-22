@@ -37,6 +37,12 @@ class DivisionController extends Controller
         ], 200);
     }
 
+    public function show(Division $division) {
+        return response()->json([
+            'division' => $division->load(['subdivisions']),
+        ], 200);
+    }
+
     public function update(Division $division, Request $request) {
         $division->name = $request->name;
         $division->level = $request->level;

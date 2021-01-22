@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'divisions'], function () {
     Route::get('', [DivisionController::class, 'index']);
     Route::post('', [DivisionController::class, 'store']);
+    Route::get('{division}', [DivisionController::class, 'show']);
     Route::put('{division}', [DivisionController::class, 'update']);
     Route::delete('{division}', [DivisionController::class, 'destroy']);
     Route::get('{division}/subdivisions', [DivisionController::class, 'getSubdivisions']);
