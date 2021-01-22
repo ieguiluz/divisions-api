@@ -18,7 +18,7 @@ class CreateDivisionsTable extends Migration
             $table->string('name', 45);
             $table->unsignedBigInteger('parent_id')->nullable();
             $table->integer('level');
-            $table->integer('quantity');
+            $table->integer('colaborators_qty');
             $table->string('ambassador')->nullable();
             $table->timestamps();
 
