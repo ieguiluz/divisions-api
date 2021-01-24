@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class DivisionController extends Controller
 {
     public function index() {
-        $divisions = Division::orderBy('id')->paginate(10);
+        $divisions = Division::orderBy('id')->get();
 
         return response()->json([
             'divisions' => $divisions->load('parent')->loadCount('subdivisions'),
